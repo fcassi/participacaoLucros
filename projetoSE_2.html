@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sócios e estadia</title>
+</head>
+<body>
+    <h1>Obrigado por ser sócio!</h1>
+    <div id = "Saudação"></div>
+    <div id = "div"></div>
+    <div id = "Lucro"></div>
+    <div id = "div1"></div>
+    <div id = "agra"></div>
+    <script>
+    //----------------------------Variáveis-------------------------- 
+    let nome = prompt("Favor Inserir seu nome:")
+    let funcionario = Number(prompt("Olá, " + nome + ", você é sócio da nossa empresa? \n 1 - Sim \n 2 - Não"))
+    let lucro = ""
+    let div = "---------------------------------------------------------------------------------------------------"
+    let div1 = "---------------------------------------------------------------------------------------------------"
+    let agradecimento = "Obrigado por usar nosso portal, " + nome + "!"
+    //----------------------------------------------------------------
+    
+        if (funcionario === 1){
+        //------------------------------------------------------------------------------------
+        let anoEmpresa = Number(prompt(nome + ", digite quantos anos você é sócio de nossa companhia! (Favor só digitar números) \n \t  0 a 10 anos - R$2.500,00 \n \t  11 a 19 anos - R$10.000,00 \n \t  20 a 29 anos - R$15.000,00 \n \t  30+ anos - R$ 20.000,00"))
+        let saudacao = "Muito bem, " + nome + ". Obrigado por fazer parte da nossa empresa! Esperamos ter você conosco para o próximo ano :D"
+        //------------------------------------------------------------------------------------
+
+         if(anoEmpresa <= 10){
+            lucro = "Sua participação dos lucros da empresa é de R$ 2.500,00"
+        }else if(anoEmpresa > 10 && anoEmpresa < 20 ){
+            lucro = "Sua participação dos lucros da empresa é de R$ 10.000,00"
+        }else if(anoEmpresa >= 20 && anoEmpresa < 30){
+            lucro = "Sua participaçao dos lucros da empresa é de R$ 15.000,00"
+        }else if(anoEmpresa >= 30){
+            lucro = "Sua participaçao dos lucros da empresa é de R$ 20.000,00"
+        }else{
+            lucro = "Favor inserir um número válido, " + nome
+        }
+         document.getElementById("Saudação").innerHTML = saudacao
+         document.getElementById("div").innerHTML = div
+         document.getElementById("Lucro").innerHTML = lucro
+         document.getElementById("div1").innerHTML = div1
+         document.getElementById("agra").innerHTML = agradecimento
+        
+         
+        }else if (funcionario === 2){
+            lucro = "Infelizmente você não trabalha conosco"
+
+
+        }else {
+            lucro = "Favor inserir um número válido"
+
+        }
+
+        document.getElementById("Lucro").innerHTML = lucro
+        document.getElementById("div1").innerHTML = div1
+        document.getElementById("agra").innerHTML = agradecimento
+   </script>
+</body>
+</html>
